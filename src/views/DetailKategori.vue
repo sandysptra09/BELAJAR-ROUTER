@@ -1,15 +1,16 @@
 <template>
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Semua Produk</h1>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Daftar Produk {{ DetailKategori.nama_kategori }}</h1>
         <br>
         <div class="grid md:grid-cols-3 gap-8">
-            <div v-for="produk in state" :key="produk.id"
-                class="w-full max-w-sm bg-white border border-emerald-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div v-for="produk in detailproduk" :key="produk.id"
+                class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                    <img class="p-8 rounded-t-lg" height="800" width="800" :src="produk.img_product" alt="product image" />
+                    <img class="p-8 rounded-t-lg" :src="produk.img_product" alt="product image" />
                 </a>
                 <div class="px-5 pb-5">
-                    <h4 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ produk.nama }}
+                    <h4 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{
+                        produk.nama }}
                     </h4>
                     <div class="flex items-center mt-2.5 mb-5">
                         <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +44,7 @@
                     <div class="flex items-center justify-between">
                         <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ produk.harga }}</span>
 
+
                     </div>
                     <br>
                     <div>
@@ -52,7 +54,6 @@
                                 Beli Sekarang
                             </h4>
                         </router-link>
-
                     </div>
                 </div>
             </div>
@@ -61,22 +62,20 @@
 </template>
 
 <script>
-import { onMounted, reactive } from 'vue';
-import { produk } from '/src/assets/Produk';
+import { kategori } from '../assets/Kategori';
+import { produk } from '../assets/Produk';
 
 export default {
-    setup(props, context) {
-        const state = reactive(produk["produk"]);
-
-        onMounted(() => {
-            context.emit('id-menu', 4);
-        });
-
+    props: [
+        "id_kategori"
+    ],
+    setup(props) {
+        const DetailKategori = kategori.kategori.find((item) => { return item.id == props.id_kategori })
+        const detailproduk = produk.produk.filter(e => { return DetailKategori.id == e.id_kategori });
         return {
-            state
+            DetailKategori,
+            detailproduk
         }
     }
 }
 </script>
-
-<style scoped></style>

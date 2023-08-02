@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import 'flowbite/dist/flowbite';
+
 import NavbarComponent from '@/components/NavbarComponent.vue';
 import { ref } from 'vue';
 
