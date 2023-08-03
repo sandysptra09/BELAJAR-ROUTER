@@ -76,7 +76,7 @@ export const produk = {
             "id": 10,
             "id_kategori" : 4,
             "nama" : "SEPEDA MTB BNB King",
-            "harga" : "Rp. 2.5  00.000,00",
+            "harga" : "Rp. 2.500.000,00",
             "img_product": "https://www.bikenbike.co.id/wp-content/uploads/2020/06/KING-RED-2-1-1.png",
             "detail" : "Sepeda MTB (Mountain Bike) adalah jenis sepeda yang dirancang khusus untuk berkendara di medan yang berat dan berat seperti pegunungan, hutan, atau jalur berbatu. Sepeda MTB memiliki beberapa fitur khusus yang membedakannya dari sepeda lain, termasuk ban yang lebih lebar dan berduri untuk meningkatkan traksi dan cengkeraman pada permukaan yang tidak rata, sistem suspensi yang memberikan penyerapan guncangan dan kehalusan, serta rangka yang kokoh dan tahan lama untuk mengatasi tekanan dan beban ekstra selama perjalanan off-road. Desain dan konstruksi sepeda MTB berfokus pada kenyamanan, daya tahan, dan kontrol yang optimal, membuatnya menjadi pilihan yang ideal bagi mereka yang mencari petualangan dan tantangan di medan yang menantang.",
         },

@@ -10,6 +10,10 @@ import DetailKategori from '/src/views/DetailKategori.vue';
 
 import Detail from '/src/views/Detail.vue';
 
+import Login from '/src/views/Login.vue'
+
+import { users } from '../assets/user';
+
 const routes = [
     {
         path: '/',
@@ -30,6 +34,14 @@ const routes = [
         path: '/produk',
         name: 'produk',
         component: Produk,
+        beforeEnter: (to, from, next) => {
+            const loggedInUser = true;
+            if (loggedInUser) {
+                next(); // Lanjutkan ke halaman produk jika sudah login
+            } else {
+                next("/login"); // Alihkan ke halaman login jika belum login
+            }
+        },
     },
     {
         path: '/kategori',
@@ -48,6 +60,13 @@ const routes = [
         component: DetailKategori,
         props: true
     },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+        props: true
+    },
+
 ];
 
 const router = createRouter({

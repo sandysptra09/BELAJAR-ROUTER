@@ -2,9 +2,9 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
         <h1 class="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">Kategori</h1>
         <br>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-4 gap-8">
             <div v-for="kategori in state" :key="kategori.id"
-                class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                class="w-full max-w-sm bg-white border border-green-200 rounded-lg shadow dark:bg-green-800 dark:border-green-700">
                 <a href="#">
                     <img class="p-8 rounded-t-lg" :src="kategori.gambar_kategori" alt="product image" />
                 </a>
